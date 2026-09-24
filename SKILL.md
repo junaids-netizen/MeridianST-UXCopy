@@ -81,6 +81,21 @@ Load [terminology.md](terminology.md) for voice, terminology, and formatting. Lo
 - Nav title on amount step: **Payment**.
 - Sentence case for labels and buttons; proper nouns only where required.
 
+**Design for Delight check** (every Review and Create; rules D1–D10 in [terminology.md](terminology.md))
+
+- [ ] D1 Every string is necessary; nothing can be removed without the user getting stuck
+- [ ] D2 Fewest words possible; buttons 1–3 words; key fact first
+- [ ] D3 No fact repeated on the screen
+- [ ] D4 No request for info the system already has
+- [ ] D5 Copy covers only this step
+- [ ] D6 Clear primary line vs secondary detail
+- [ ] D7 Actions and errors get specific, immediate feedback copy
+- [ ] D8 Same terms as the rest of Vera
+- [ ] D9 No internal or processor jargon
+- [ ] D10 Choices are distinguishable by label alone; primary CTA is the recommended action
+
+When drafting (Create/Update), write a version that passes every check. When a pilot reference string itself fails a check, keep it as the reference but add a ⚠️ D-note (see "Known tensions" in terminology.md).
+
 ### 4. Deliver output
 
 Use this template:
@@ -96,6 +111,11 @@ Use this template:
 |------|---------|---------------------------|--------|
 | … | … | … | ✅ / ⚠️ / ❌ |
 
+### Design for Delight
+| Check | Result | Note |
+|-------|--------|------|
+| D1–D10 (list only failures and ⚠️) | ❌ / ⚠️ | {string} — {why, suggested fix} |
+
 ### Summary
 - {1–3 bullets}
 
@@ -103,7 +123,7 @@ Use this template:
 {slot-by-slot final strings ready for Figma}
 ```
 
-Status legend: ✅ match; ⚠️ minor (punctuation, spacing, wrapping); ❌ wrong term, tone, or missing slot.
+Status legend: ✅ match; ⚠️ minor (punctuation, spacing, wrapping) or a Design for Delight concern on approved copy; ❌ wrong term, tone, missing slot, or a clear D1–D10 failure in new copy.
 
 ### 5. Figma updates (only when asked)
 

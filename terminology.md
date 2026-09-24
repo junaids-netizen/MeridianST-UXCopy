@@ -41,6 +41,38 @@ For **Review** mode: map the user's frame to this taxonomy, then check whether a
 - **Financial precision** — currency with `$` prefix; amounts in mocks are placeholders.
 - **No jargon** — processor names (Tabapay) stay in spec labels, not in customer copy unless compliance requires.
 
+## Design for Delight principles (copy)
+
+From the CEO's Design for Delight principles. The goal is **zero cognitive load**: a first-time user never needs instructions, takes the right first action instinctively, and never switches into analytic mode. Principles are in priority order; when two conflict, the higher one wins.
+
+| # | Principle | Copy rule |
+|---|-----------|-----------|
+| D1 | Zero clutter | Every string must be necessary for the outcome. Remove intro lines, restated titles, "Please note" lines, and helper text the user can succeed without. |
+| D2 | Use fewer words | If one word works, don't use two. Buttons 1–3 words. Put the key fact (amount, date, action) first so the line can be scanned, not read. |
+| D3 | Don't repeat | A fact appears once per screen. If the nav title says it, the body and CTA don't restate it. |
+| D4 | Smart defaults | Don't ask for what the system knows or can fill. No "Enter your…" instructions for values that can be pre-filled. |
+| D5 | One page, one context | Copy covers only the current step. Limits, fees and edge cases appear where they apply, not up front. |
+| D6 | Hierarchy | One primary line per block; supporting detail goes in secondary text. Don't use long sentences to carry emphasis. |
+| D7 | Instant feedback | Every action gets an immediate, specific result message: "Payment scheduled", not "Success!". Inline errors sit next to the field they refer to. |
+| D8 | Consistency | Same word for the same thing everywhere (see terminology above). Never mix "Pay now" / "Make payment" / "Pay". |
+| D9 | Familiar mental models | Use words users know from banking apps. No internal or processor terms (CB/SB/MAD, Tabapay, response code) in UI. |
+| D10 | Fewer analytical choices | Options must be distinguishable from their labels alone. No near-synonym pairs ("Continue" vs "Next"). The recommended action is the primary CTA, in plain words. |
+
+**Completion moments** (payment made, card added, milestone reached): short, warm success copy. Animation and haptics carry the delight; copy stays brief.
+
+**Custom interactions** (e.g. the payment slider): novel UI still uses familiar vocabulary.
+
+**Review test:** if the copy needs explaining, or a first-time user would pause to think, flag it.
+
+### Known tensions with approved pilot copy
+
+These canonical strings stay as reference (✅ for consistency), but reviews should add a ⚠️ D-note so design can decide:
+
+| String | Principle | Note |
+|--------|-----------|------|
+| You've paid $5.00 so far this statement period | D2 | 9 words; long for a scannable banner |
+| Minimum Amount Due | Sentence case rule | Title Case, unlike the rest of the UI |
+
 ## Formatting
 
 - **Due date:** `Due by {Mon} {d} {yyyy}`

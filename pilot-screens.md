@@ -107,9 +107,9 @@ Use these as the reference set until the full catalog is added.
 
 | Slot | Draft pattern |
 |------|----------------|
-| error_title | Payment didn’t go through |
-| error_body | Your account doesn’t have enough available balance for this payment. |
-| primary_cta | Try another payment method |
+| error_title | Payment failed |
+| error_body | Not enough balance on this card. |
+| primary_cta | Use another card |
 | secondary_cta | Change amount |
 
 Replace with approved strings when design adds the full frame.
