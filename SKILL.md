@@ -19,7 +19,7 @@ metadata:
 | Item | Value |
 |------|--------|
 | Figma file | [Vera — Dev Ready ✅](https://www.figma.com/design/RTp68wPIXZDjWelVBqfTPi/Vera---Dev-Ready-%E2%9C%85) |
-| File key | `RTp68wPIXZDjWelVBqfTPi` |
+| File key | See Figma URL path (Vera Dev Ready) |
 | Pilot section | `24190:32359` (Section 1 — payments) |
 | Copy checks | [zero-clutter-copy.md](zero-clutter-copy.md) — Zero Clutter v0.4.3 IDs |
 

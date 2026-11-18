@@ -37,6 +37,13 @@ Main entry point: [SKILL.md](SKILL.md)
 | `terminology.md` | Vocabulary, CB/SB/MAD, failure taxonomy |
 | `pilot-screens.md` | 5 pilot frames, canonical strings, known findings |
 | `examples.md` | Sample outputs |
+| `scripts/check.py` | Validates skill files and Zero Clutter ID references |
+
+## Test
+
+```bash
+python3 scripts/check.py
+```
 
 ## Works with Zero Clutter
 

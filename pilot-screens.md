@@ -1,6 +1,6 @@
 # Meridian - UX Copy — pilot screens (5)
 
-File: `RTp68wPIXZDjWelVBqfTPi` · Section `24190:32359`
+Vera Dev Ready Figma file · Section `24190:32359`
 
 Use these as the reference set until the full catalog is added.
 
