@@ -85,7 +85,7 @@ Use these as the reference set until the full catalog is added.
 | secondary_cta | Schedule |
 | primary_cta | Pay now |
 
-**Limit scenario (spec only until full UI provided):** max 5 cards — customer-facing error/toast copy TBD in full rules pass.
+**Limit scenario (spec only until full UI provided):** max 5 cards. Customer-facing copy is TBD; when it's written it must state the limit and offer the recovery (SCI-18, SCI-13), e.g. "You can save up to 5 cards" + "Remove a card" (new, needs approval).
 
 ---
 
@@ -103,16 +103,29 @@ Use these as the reference set until the full catalog is added.
 - Scenario classification ✅ against taxonomy
 - User-facing error title/body/CTAs ❌ *missing — requires full UI frame or PM-supplied draft*
 
-**Create-mode placeholder structure** (do not ship without compliance review):
+**Create-mode draft** (all strings new, needs approval; do not ship without compliance review):
 
-| Slot | Draft pattern |
-|------|----------------|
-| error_title | Payment failed |
-| error_body | Not enough balance on this card. |
-| primary_cta | Use another card |
-| secondary_cta | Change amount |
+| Slot | Draft | Words |
+|------|-------|-------|
+| error_title | Payment failed | 2 |
+| error_body | Not enough balance on •••• {last4}, so nothing was charged. | 9 |
+| primary_cta | Use another card | 3 |
+| secondary_cta | Change amount | 2 |
 
-Replace with approved strings when design adds the full frame.
+The body names the card (SCI-06), says where the money is (SCI-12) and stays one sentence above the CTAs (ZCL-05). "Nothing was charged" must be confirmed with engineering. Replace with approved strings when design adds the full frame.
+
+---
+
+## Known findings on approved pilot copy
+
+These strings stay as the reference (PROC-07). Reviews report them as **Decide** rows with the proposal below until the approver rules.
+
+| Pilot | Slot | Approved string | ID | Finding | Proposal (new, needs approval) |
+|-------|------|-----------------|----|---------|--------------------------------|
+| P1 | progress_banner | You've paid $5.00 so far this statement period | WORD-01, WORD-03 | 9 words, over the 6-word banner budget; the amount isn't first | $5.00 paid this statement period |
+| P1 | meta_date | Due by Jul 12 2025 | MENT-03 | US date format has a comma after the day | Due by Jul 12, 2025 |
+| P1 | slider_label_bottom | Minimum Amount Due | Sentence case rule | Title Case, unlike every other label | Minimum amount due |
+| P3 | list_action | Add new | WORD-02 | Read alone, "new" what? | Add card |
 
 ---
 

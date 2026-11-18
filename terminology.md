@@ -22,60 +22,35 @@ Common spec labels on dark frames (not exhaustive — full catalog TBD):
 
 ## Failure & limits taxonomy (spec labels)
 
-Top-level bucket is usually **Payment failure reattempt**. Sub-variants include:
+Top-level bucket is usually **Payment failure reattempt**. Each variant's customer copy must pass the checks listed (IDs in [zero-clutter-copy.md](zero-clutter-copy.md)):
 
-- Retry with another payment method
-- Insufficient balance (+ optional **Change Amount**)
-- Tabapay category 1 / 2 or 3 response code
-- Try adding the same card again
-- CVC limit exhausted (with context: Saved payments, Adding payment method, …)
-- Payment Limit exhausted (Adding payment method → Selecting Debit card)
+| Variant (spec label) | Copy must… | Checks |
+|----------------------|------------|--------|
+| Retry with another payment method | Say the payment failed, that nothing was charged, and offer the other method as the primary CTA | SCI-12, SCI-13 |
+| Insufficient balance (+ optional **Change Amount**) | Name the card (last 4), say nothing was charged, offer one recovery as the primary CTA | SCI-06, SCI-12, SCI-13 |
+| Tabapay category 1 / 2 or 3 response code | Plain-language reason only; never the processor name or code | WORD-05, SCI-13 |
+| Try adding the same card again | Say what to do differently, or that the card can't be added; no blame | SCI-13, SCI-07 |
+| CVC limit exhausted (Saved payments, Adding payment method, …) | Warn before the last attempt; when locked, state when it resets | SCI-14, SCI-18 |
+| Payment Limit exhausted (Adding payment method → Selecting Debit card) | Name the limit that bound and what's left | SCI-18, SCI-02 |
+| Max no. of cards (5) | State the limit ("up to 5 cards") and offer the recovery (remove a card) | SCI-18, SCI-13 |
+
+"Nothing was charged" is a fact to confirm with engineering for each variant before it ships; until then it's a **Check** row.
 
 For **Review** mode: map the user's frame to this taxonomy, then check whether a **full UI** frame exists in file. Label-only frames define scenario identity, not final error strings.
 
 ## Voice & tone (inferred from Dev Ready UI)
 
-- **Clear and neutral** — state facts (amounts, due dates, limits); avoid blame.
-- **Concise** — short nav titles; button labels 1–3 words where possible.
-- **Consistent action verbs** — Pay now, Next, Schedule, Enter custom amount, Add new.
+- **Clear and neutral** — state facts (amounts, due dates, limits); no blame, guilt or threats (SCI-07, SCI-13).
+- **Concise** — within the word budgets in [zero-clutter-copy.md](zero-clutter-copy.md) (WORD-01).
+- **Consistent action verbs** — Pay now, Next, Schedule, Enter custom amount, Add new. Never mix "Pay now" / "Make payment" / "Pay" (CONS-07).
 - **Financial precision** — currency with `$` prefix; amounts in mocks are placeholders.
-- **No jargon** — processor names (Tabapay) stay in spec labels, not in customer copy unless compliance requires.
-
-## Design for Delight principles (copy)
-
-From the CEO's Design for Delight principles. The goal is **zero cognitive load**: a first-time user never needs instructions, takes the right first action instinctively, and never switches into analytic mode. Principles are in priority order; when two conflict, the higher one wins.
-
-| # | Principle | Copy rule |
-|---|-----------|-----------|
-| D1 | Zero clutter | Every string must be necessary for the outcome. Remove intro lines, restated titles, "Please note" lines, and helper text the user can succeed without. |
-| D2 | Use fewer words | If one word works, don't use two. Buttons 1–3 words. Put the key fact (amount, date, action) first so the line can be scanned, not read. |
-| D3 | Don't repeat | A fact appears once per screen. If the nav title says it, the body and CTA don't restate it. |
-| D4 | Smart defaults | Don't ask for what the system knows or can fill. No "Enter your…" instructions for values that can be pre-filled. |
-| D5 | One page, one context | Copy covers only the current step. Limits, fees and edge cases appear where they apply, not up front. |
-| D6 | Hierarchy | One primary line per block; supporting detail goes in secondary text. Don't use long sentences to carry emphasis. |
-| D7 | Instant feedback | Every action gets an immediate, specific result message: "Payment scheduled", not "Success!". Inline errors sit next to the field they refer to. |
-| D8 | Consistency | Same word for the same thing everywhere (see terminology above). Never mix "Pay now" / "Make payment" / "Pay". |
-| D9 | Familiar mental models | Use words users know from banking apps. No internal or processor terms (CB/SB/MAD, Tabapay, response code) in UI. |
-| D10 | Fewer analytical choices | Options must be distinguishable from their labels alone. No near-synonym pairs ("Continue" vs "Next"). The recommended action is the primary CTA, in plain words. |
-
-**Completion moments** (payment made, card added, milestone reached): short, warm success copy. Animation and haptics carry the delight; copy stays brief.
-
-**Custom interactions** (e.g. the payment slider): novel UI still uses familiar vocabulary.
-
-**Review test:** if the copy needs explaining, or a first-time user would pause to think, flag it.
-
-### Known tensions with approved pilot copy
-
-These canonical strings stay as reference (✅ for consistency), but reviews should add a ⚠️ D-note so design can decide:
-
-| String | Principle | Note |
-|--------|-----------|------|
-| You've paid $5.00 so far this statement period | D2 | 9 words; long for a scannable banner |
-| Minimum Amount Due | Sentence case rule | Title Case, unlike the rest of the UI |
+- **No jargon** — processor names (Tabapay) stay in spec labels, not in customer copy unless compliance requires (WORD-05).
+- **Completion moments** (payment made, card added): the outcome is the hero; motion and haptics carry the delight, so copy stays short (SCI-01, SENSE-11).
+- **Custom interactions** (e.g. the payment slider): novel UI still uses familiar words.
 
 ## Formatting
 
-- **Due date:** `Due by {Mon} {d} {yyyy}`
+- **Due date:** `Due by {Mon} {d} {yyyy}` (approved; see known findings in pilot-screens.md for the MENT-03 comma question)
 - **Statement period progress:** `You've paid {amount} so far this statement period`
 - **Card mask:** `•••• {last4}` (UI); do not spell out “last four digits” in labels
 - **CVV:** all caps in label

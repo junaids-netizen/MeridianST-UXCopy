@@ -1,25 +1,19 @@
 # Meridian - UX Copy
 
-Cursor / Figma agent skill for creating and reviewing **Vera** payment-flow copy against the [Vera Dev Ready Figma file](https://www.figma.com/design/RTp68wPIXZDjWelVBqfTPi/Vera---Dev-Ready-%E2%9C%85).
+Cursor / Figma agent skill for creating and reviewing **Vera** payment-flow copy against the [Vera Dev Ready Figma file](https://www.figma.com/design/RTp68wPIXZDjWelVBqfTPi/Vera---Dev-Ready-%E2%9C%85) and the copy checks from [Zero Clutter](https://github.com/prithvi-zeta/zero-clutter) (Design for Delight).
 
 ## Install (PMs)
 
 **Cursor (personal skill — all projects)**
 
 ```bash
-git clone https://github.com/YOUR_ORG/meridian-ux-copy.git ~/.cursor/skills/meridian-ux-copy
-```
-
-If you clone this repo with the folder name `Meridian - UX Copy`:
-
-```bash
-git clone https://github.com/YOUR_ORG/Meridian-UX-Copy.git ~/.cursor/skills/meridian-ux-copy
+git clone https://github.com/junaids-netizen/MeridianST-UXCopy.git ~/.cursor/skills/meridian-ux-copy
 ```
 
 **Cursor (team repo)**
 
 ```bash
-cp -R "Meridian - UX Copy" .cursor/skills/meridian-ux-copy
+git clone https://github.com/junaids-netizen/MeridianST-UXCopy.git .cursor/skills/meridian-ux-copy
 ```
 
 Commit `.cursor/skills/meridian-ux-copy` so everyone gets the same rules.
@@ -27,8 +21,10 @@ Commit `.cursor/skills/meridian-ux-copy` so everyone gets the same rules.
 ## Use
 
 1. Connect Figma MCP in Cursor.
-2. Prompt: **“Use the meridian-ux-copy skill”** (Meridian - UX Copy) and paste a Figma frame link or select a frame.
+2. Prompt: **“Use the meridian-ux-copy skill”** and paste a Figma frame link or select a frame.
 3. Ask to **review** or **draft** copy.
+
+You get tables: a verdict, the copy on screen against the approved copy, then numbered findings with Zero Clutter IDs (`Fix`, `Decide`, `Suggest`, `Check`), then what to keep and do next. Any new copy comes back marked **(new, needs approval)**.
 
 Main entry point: [SKILL.md](SKILL.md)
 
@@ -36,10 +32,15 @@ Main entry point: [SKILL.md](SKILL.md)
 
 | File | Role |
 |------|------|
-| `SKILL.md` | Agent workflow and output template |
-| `terminology.md` | Voice, CB/SB/MAD, failure taxonomy |
-| `pilot-screens.md` | 5 pilot frames + canonical strings |
-| `examples.md` | Sample review outputs |
+| `SKILL.md` | Agent workflow and output format |
+| `zero-clutter-copy.md` | Copy checks with Zero Clutter IDs, tests and word budgets |
+| `terminology.md` | Vocabulary, CB/SB/MAD, failure taxonomy |
+| `pilot-screens.md` | 5 pilot frames, canonical strings, known findings |
+| `examples.md` | Sample outputs |
+
+## Works with Zero Clutter
+
+This skill checks copy only. The full [Zero Clutter](https://github.com/prithvi-zeta/zero-clutter) gate covers layout, hierarchy, motion and haptics. Both use the same check IDs, so findings line up between the two.
 
 ## Figma
 
