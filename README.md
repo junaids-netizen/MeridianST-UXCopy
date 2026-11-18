@@ -1,6 +1,6 @@
 # Meridian - UX Copy
 
-Cursor / Figma agent skill for creating and reviewing **Vera** payment-flow copy against the [Vera Dev Ready Figma file](https://www.figma.com/design/RTp68wPIXZDjWelVBqfTPi/Vera---Dev-Ready-%E2%9C%85) and the copy checks from [Zero Clutter](https://github.com/prithvi-zeta/zero-clutter) (Design for Delight).
+Cursor / Figma agent skill for creating and reviewing copy for Meridian projects.
 
 ## Install (PMs)
 
